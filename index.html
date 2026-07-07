@@ -336,16 +336,7 @@
       position: relative;
       overflow: hidden;
     }
-
-    .card::before {
-      content: attr(data-letter);
-      position: absolute;
-      right: 1rem;
-      bottom: -1.2rem;
-      color: rgba(181, 139, 70, 0.12);
-      font-size: 9rem;
-      line-height: 1;
-    }
+    /* card::before letter text removed — using PNG art instead */
 
     .card h3 {
       color: var(--gold);
@@ -408,6 +399,30 @@
 
     .credits div:last-child { border-bottom: 0; }
     .credits span:first-child { color: var(--gold); }
+
+
+    /* ── IN-CONTENT LETTER ART ──────────────────────────── */
+    .card { position: relative; overflow: hidden; }
+    .card-art {
+      position: absolute;
+      bottom: -12%;
+      right: -8%;
+      width: 72%;
+      mix-blend-mode: screen;
+      opacity: 0.28;
+      pointer-events: none;
+      user-select: none;
+      transform: rotate(6deg);
+    }
+    .section-corner-art {
+      position: absolute;
+      mix-blend-mode: screen;
+      opacity: 0.18;
+      pointer-events: none;
+      user-select: none;
+    }
+    .quote-band { position: relative; overflow: hidden; }
+    .film-info  { position: relative; }
 
     /* ── WATCH / TRAILER ─── */
     .watch-layout {
@@ -500,17 +515,30 @@
 
   <!-- ══ LETTER ART BACKGROUND ══════════════════════════ -->
   <div class="bg-letters" aria-hidden="true">
-    <img src="Letters/A.png"  style="width:42vw; top:-4%;  left:-8%;  transform:rotate(-8deg);  opacity:0.18">
-    <img src="Letters/N.png"  style="width:26vw; top:2%;   left:56%;  transform:rotate(5deg);   opacity:0.16">
-    <img src="Letters/S.png"  style="width:22vw; top:6%;   right:-3%; transform:rotate(-6deg);  opacity:0.15">
-    <img src="Letters/G.png"  style="width:24vw; top:28%;  left:-4%;  transform:rotate(10deg);  opacity:0.18">
-    <img src="Letters/A2.png" style="width:28vw; top:24%;  right:-2%; transform:rotate(-10deg); opacity:0.16">
-    <img src="Letters/T.png"  style="width:20vw; top:42%;  left:42%;  transform:rotate(-5deg);  opacity:0.12">
-    <img src="Letters/B.png"  style="width:26vw; top:52%;  left:-6%;  transform:rotate(-12deg); opacity:0.17">
-    <img src="Letters/D.png"  style="width:22vw; top:50%;  right:0%;  transform:rotate(8deg);   opacity:0.15">
-    <img src="Letters/G2.png" style="width:28vw; top:66%;  left:28%;  transform:rotate(6deg);   opacity:0.14">
-    <img src="Letters/Y.png"  style="width:22vw; top:76%;  left:-2%;  transform:rotate(-8deg);  opacity:0.16">
-    <img src="Letters/D2.png" style="width:30vw; top:74%;  right:-4%; transform:rotate(-6deg);  opacity:0.18">
+    <!-- Top zone -->
+    <img src="Letters/A.png"  style="width:46vw; top:-6%;  left:-10%; transform:rotate(-10deg); opacity:0.2">
+    <img src="Letters/G2.png" style="width:24vw; top:0%;   left:38%;  transform:rotate(4deg);   opacity:0.16">
+    <img src="Letters/N.png"  style="width:30vw; top:-2%;  right:-6%; transform:rotate(8deg);   opacity:0.17">
+    <!-- Upper-mid zone -->
+    <img src="Letters/S.png"  style="width:20vw; top:16%;  left:2%;   transform:rotate(-14deg); opacity:0.15">
+    <img src="Letters/Y.png"  style="width:26vw; top:18%;  left:55%;  transform:rotate(-6deg);  opacity:0.16">
+    <img src="Letters/A2.png" style="width:32vw; top:20%;  right:-8%; transform:rotate(12deg);  opacity:0.17">
+    <!-- Mid zone -->
+    <img src="Letters/G.png"  style="width:28vw; top:36%;  left:-5%;  transform:rotate(9deg);   opacity:0.18">
+    <img src="Letters/T.png"  style="width:22vw; top:34%;  left:42%;  transform:rotate(-8deg);  opacity:0.13">
+    <img src="Letters/B.png"  style="width:26vw; top:38%;  right:-4%; transform:rotate(-11deg); opacity:0.16">
+    <!-- Lower-mid zone -->
+    <img src="Letters/D2.png" style="width:30vw; top:54%;  left:-8%;  transform:rotate(-7deg);  opacity:0.18">
+    <img src="Letters/A.png"  style="width:22vw; top:52%;  left:35%;  transform:rotate(15deg);  opacity:0.13">
+    <img src="Letters/D.png"  style="width:26vw; top:56%;  right:-2%; transform:rotate(6deg);   opacity:0.15">
+    <!-- Bottom zone -->
+    <img src="Letters/N.png"  style="width:28vw; top:72%;  left:-4%;  transform:rotate(11deg);  opacity:0.17">
+    <img src="Letters/G2.png" style="width:24vw; top:70%;  left:32%;  transform:rotate(-9deg);  opacity:0.14">
+    <img src="Letters/S.png"  style="width:32vw; top:74%;  right:-6%; transform:rotate(-13deg); opacity:0.18">
+    <!-- Far bottom -->
+    <img src="Letters/Y.png"  style="width:26vw; top:88%;  left:8%;   transform:rotate(-5deg);  opacity:0.15">
+    <img src="Letters/T.png"  style="width:22vw; top:86%;  left:55%;  transform:rotate(10deg);  opacity:0.14">
+    <img src="Letters/A2.png" style="width:28vw; top:90%;  right:-5%; transform:rotate(7deg);   opacity:0.16">
   </div>
   <header>
     <nav class="page nav">
@@ -565,24 +593,31 @@
       </div>
       <div class="grid">
         <article class="card" data-letter="Ա">
+          <img class="card-art" src="Letters/G.png" aria-hidden="true" style="transform:rotate(-8deg)">
           <h3>The Vision</h3>
           <p>Mesrop Mashtots saw that a nation needed its own written language to preserve knowledge, prayer, law, and education.</p>
         </article>
         <article class="card" data-letter="Մ">
+          <img class="card-art" src="Letters/B.png" aria-hidden="true" style="transform:rotate(5deg)">
           <h3>The Mission</h3>
           <p>The alphabet became more than writing. It became a bridge between generations and a shield for Armenian culture.</p>
         </article>
         <article class="card" data-letter="Գ">
+          <img class="card-art" src="Letters/D.png" aria-hidden="true" style="transform:rotate(-4deg)">
           <h3>The Legacy</h3>
           <p>Through manuscripts, schools, churches, and books, the Armenian letters continued to carry memory across time.</p>
         </article>
       </div>
       <div class="quote-band">
+        <img src="Letters/A2.png" aria-hidden="true" style="position:absolute;width:28%;top:-15%;left:-4%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-12deg);pointer-events:none;">
+        <img src="Letters/Y.png"  aria-hidden="true" style="position:absolute;width:22%;top:-10%;right:-3%;mix-blend-mode:screen;opacity:0.18;transform:rotate(10deg);pointer-events:none;">
         <p>&#8220;To know wisdom and instruction, to perceive the words of understanding.&#8221;</p>
       </div>
     </section>
 
-    <section id="alphabet" class="page section">
+    <section id="alphabet" class="page section" style="position:relative;overflow:hidden;">
+      <img src="Letters/N.png" aria-hidden="true" style="position:absolute;width:30%;top:-5%;right:-5%;mix-blend-mode:screen;opacity:0.15;transform:rotate(8deg);pointer-events:none;">
+      <img src="Letters/T.png" aria-hidden="true" style="position:absolute;width:24%;bottom:-8%;left:-3%;mix-blend-mode:screen;opacity:0.15;transform:rotate(-10deg);pointer-events:none;">
       <div class="section-title">
         <small>The Alphabet</small>
         <h2>Thirty-six immortal letters</h2>
@@ -607,7 +642,8 @@
             Style: Ancient manuscript, gold ornament, black cinematic background
           </p>
         </div>
-        <div class="credits">
+        <div class="credits" style="position:relative;overflow:hidden;">
+          <img src="Letters/S.png" aria-hidden="true" style="position:absolute;width:55%;bottom:-15%;right:-10%;mix-blend-mode:screen;opacity:0.22;transform:rotate(8deg);pointer-events:none;">
           <div><span>Director</span><span>Hrachya Vardanyan</span></div>
           <div><span>Country</span><span>Armenia / USA</span></div>
           <div><span>Theme</span><span>Language, faith, identity</span></div>
@@ -623,6 +659,7 @@
       </div>
       <div class="watch-layout">
         <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
+          <img src="Letters/D2.png" aria-hidden="true" style="position:absolute;width:90%;bottom:-20%;left:-10%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-8deg);pointer-events:none;">
           <div class="play-circle"></div>
         </a>
         <div>
