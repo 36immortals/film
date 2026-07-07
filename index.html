@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>html{opacity:0;transition:opacity .18s ease}</style>
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    // Fire immediately, before browser can restore position
-    window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-    document.documentElement.scrollTop = 0;
-    document.body && (document.body.scrollTop = 0);
-    // Double rAF: fires after browser scroll restoration pass
-    window.addEventListener('load', function() {
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          document.documentElement.scrollTop = 0;
-          document.body.scrollTop = 0;
-          window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-        });
-      });
-    });
-    window.addEventListener('pageshow', function() {
-      requestAnimationFrame(function() {
-        window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-      });
-    });
+    function _show() {
+      window.scrollTo({top:0,left:0,behavior:'instant'});
+      document.documentElement.style.opacity = '1';
+    }
+    window.addEventListener('load', _show);
+    // Safety fallback: show after 1s no matter what
+    setTimeout(_show, 1000);
+    window.addEventListener('pageshow', _show);
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
