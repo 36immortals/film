@@ -577,23 +577,40 @@
   <!-- ══ LETTER ART BACKGROUND ══════════════════════════ -->
   <div class="bg-letters" aria-hidden="true">
 
-    <!-- ── LEFT EDGE (right edge of each img stays ≤ 28% of viewport) ── -->
-    <img src="Letters/A.png"  style="width:58vw; top:2%;   left:-30%; transform:rotate(-14deg); opacity:0.23">
-    <img src="Letters/B.png"  style="width:42vw; top:26%;  left:-16%; transform:rotate(-20deg); opacity:0.20">
-    <img src="Letters/G2.png" style="width:38vw; top:52%;  left:-12%; transform:rotate(-8deg);  opacity:0.18">
-    <img src="Letters/D2.png" style="width:54vw; top:74%;  left:-26%; transform:rotate(-6deg);  opacity:0.20">
-    <img src="Letters/S.png"  style="width:24vw; top:14%;  left:-8%;  transform:rotate(-26deg); opacity:0.13">
-    <img src="Letters/N.png"  style="width:28vw; top:44%;  left:-10%; transform:rotate(12deg);  opacity:0.14">
-    <img src="Letters/Y.png"  style="width:22vw; top:86%;  left:-7%;  transform:rotate(10deg);  opacity:0.13">
+    <!-- ── LEFT SIDE · 3 non-overlapping zones ──────────── -->
 
-    <!-- ── RIGHT EDGE (left edge of each img stays ≥ 72% of viewport) ── -->
-    <img src="Letters/N.png"  style="width:54vw; top:4%;   right:-26%;transform:rotate(14deg);  opacity:0.22">
-    <img src="Letters/D.png"  style="width:40vw; top:30%;  right:-16%;transform:rotate(18deg);  opacity:0.19">
-    <img src="Letters/G.png"  style="width:44vw; top:56%;  right:-18%;transform:rotate(-14deg); opacity:0.20">
-    <img src="Letters/T.png"  style="width:50vw; top:78%;  right:-22%;transform:rotate(-10deg); opacity:0.19">
-    <img src="Letters/A2.png" style="width:26vw; top:18%;  right:-10%;transform:rotate(8deg);   opacity:0.14">
-    <img src="Letters/G2.png" style="width:22vw; top:46%;  right:-8%; transform:rotate(-18deg); opacity:0.13">
-    <img src="Letters/S.png"  style="width:28vw; top:88%;  right:-10%;transform:rotate(8deg);   opacity:0.15">
+    <!-- Zone L1 · top anchor · bleeds in from upper-left -->
+    <img src="Letters/A.png"
+         style="width:62vw; max-height:50vh; object-fit:contain;
+                top:-6%; left:-32%; transform:rotate(-13deg); opacity:0.20">
+
+    <!-- Zone L2 · mid letter · fully visible, clear breathing room -->
+    <img src="Letters/G2.png"
+         style="width:36vw; max-height:28vh; object-fit:contain;
+                top:50%; left:-12%; transform:rotate(-9deg); opacity:0.22">
+
+    <!-- Zone L3 · bottom anchor · emerges from lower-left -->
+    <img src="Letters/D2.png"
+         style="width:58vw; max-height:44vh; object-fit:contain;
+                top:82%; left:-28%; transform:rotate(-7deg); opacity:0.21">
+
+
+    <!-- ── RIGHT SIDE · 3 non-overlapping zones ─────────── -->
+
+    <!-- Zone R1 · top anchor · bleeds in from upper-right -->
+    <img src="Letters/N.png"
+         style="width:64vw; max-height:52vh; object-fit:contain;
+                top:-8%; right:-34%; transform:rotate(14deg); opacity:0.19">
+
+    <!-- Zone R2 · mid letter · fully visible -->
+    <img src="Letters/G.png"
+         style="width:34vw; max-height:28vh; object-fit:contain;
+                top:50%; right:-12%; transform:rotate(-11deg); opacity:0.22">
+
+    <!-- Zone R3 · bottom anchor · emerges from lower-right -->
+    <img src="Letters/T.png"
+         style="width:56vw; max-height:42vh; object-fit:contain;
+                top:84%; right:-26%; transform:rotate(-9deg); opacity:0.20">
 
   </div>
   <header>
