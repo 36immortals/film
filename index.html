@@ -3,9 +3,25 @@
 <head>
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
-    window.addEventListener('load', function() { window.scrollTo(0, 0); });
-    window.addEventListener('pageshow', function() { window.scrollTo(0, 0); });
+    // Fire immediately, before browser can restore position
+    window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+    document.documentElement.scrollTop = 0;
+    document.body && (document.body.scrollTop = 0);
+    // Double rAF: fires after browser scroll restoration pass
+    window.addEventListener('load', function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+        });
+      });
+    });
+    window.addEventListener('pageshow', function() {
+      requestAnimationFrame(function() {
+        window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+      });
+    });
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +45,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
 
     body {
       min-height: 100vh;
@@ -737,5 +753,18 @@
   <footer>
     <div class="page">&#169; 36 Immortals &middot; Armenian Alphabet Documentary</div>
   </footer>
+
+  <script>
+    // Smooth scroll only for internal anchor clicks (not page load)
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
