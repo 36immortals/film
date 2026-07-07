@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>36 Immortals | Mesrop Mashtots</title>
   <meta name="description" content="A documentary about Mesrop Mashtots and the Armenian alphabet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --black: #050505;
@@ -115,45 +118,100 @@
 
     .hero {
       min-height: calc(100vh - 82px);
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: clamp(2rem, 5vw, 5rem);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 5rem 0;
+      justify-content: center;
+      padding: 4rem 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-copy { position: relative; }
-
-    .eyebrow {
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
       color: var(--gold);
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+      letter-spacing: 0.38em;
       text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 0.78rem;
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.8rem;
     }
 
-    h1 {
-      font-size: clamp(3.2rem, 8.5vw, 8.6rem);
-      line-height: 0.84;
-      color: var(--gold);
-      font-style: italic;
-      text-shadow: 0 12px 35px var(--shadow);
-    }
-
-    h1 span {
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: "";
       display: block;
-      color: var(--pale-gold);
-      font-size: clamp(1.3rem, 3vw, 2.7rem);
-      font-style: normal;
-      letter-spacing: 0.04em;
-      margin-top: 1.4rem;
+      width: clamp(36px, 5.5vw, 80px);
+      height: 1px;
+      background: var(--old-gold);
     }
 
-    .armenian-title {
-      margin-top: 1.1rem;
+    .hero-numeral {
+      position: relative;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(11rem, 26vw, 26rem);
+      font-weight: 300;
+      line-height: 0.82;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--gold);
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-bg-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(20rem, 46vw, 46rem);
+      font-weight: 300;
+      color: rgba(181, 139, 70, 0.07);
+      -webkit-text-stroke: 0px transparent;
+      z-index: -1;
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    h1.hero-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(2.6rem, 7vw, 8rem);
+      font-weight: 900;
       color: var(--white);
-      font-size: clamp(1.3rem, 3vw, 2.3rem);
-      text-shadow: 0 0 20px rgba(244, 165, 28, 0.25);
+      letter-spacing: 0.15em;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-top: -0.2rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.3rem, 3vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--pale-gold);
+      margin-top: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-arm {
+      color: var(--gold);
+      font-size: clamp(0.82rem, 1.6vw, 1.3rem);
+      margin-top: 0.5rem;
+      opacity: 0.88;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      justify-content: center;
     }
 
     .description {
@@ -497,8 +555,7 @@
       body::after { inset: 0.6rem; }
       .nav { flex-direction: column; align-items: flex-start; padding: 1.2rem 0; }
       .nav-links { flex-wrap: wrap; }
-      .hero { grid-template-columns: 1fr; padding: 3rem 0; }
-      .poster { min-height: 560px; }
+      .hero { padding: 2.5rem 0 3rem; }
       .grid, .film-info, .watch-layout { grid-template-columns: 1fr; }
     }
 
@@ -556,34 +613,18 @@
 
   <main id="top">
     <section class="page hero">
-      <div class="hero-copy">
-        <p class="eyebrow">A documentary film about the Armenian alphabet</p>
-        <h1>36 Immortals <span>Mesrop Mashtots</span></h1>
-        <p class="armenian-title">Մեսրոպ Մաշտոց · Հայոց գրևի ստեծծունը</p>
-        <p class="description">
-          A cinematic journey into the creation of the Armenian alphabet, the vision of Mesrop Mashtots, and the letters that protected Armenian identity, faith, literature, and memory for centuries.
-        </p>
-        <div class="buttons">
-          <a class="btn primary" href="#watch">Watch Trailer</a>
-          <a class="btn" href="#story">Explore the Story</a>
-        </div>
+      <p class="hero-eyebrow">A Documentary Film</p>
+      <div class="hero-numeral" aria-label="36">
+        <span class="hero-bg-num" aria-hidden="true">36</span>
+        36
       </div>
-
-      <aside class="poster" aria-label="Documentary poster design">
-        <div class="ornament one">Մ</div>
-        <div class="ornament two">Ա</div>
-        <div class="ornament three">Յ</div>
-        <div class="circle-scene">
-          <div class="parchment">ԱԲԳԴԵ
-ԶԷԸԹԺ
-ԻԼԽԾԿ
-ՀՁՂՃՄ</div>
-        </div>
-        <div class="poster-caption">
-          <h2>Mesrop Mashtots</h2>
-          <p>Հայոց Այբուբեն</p>
-        </div>
-      </aside>
+      <h1 class="hero-title">Immortals</h1>
+      <p class="hero-sub">Mesrop Mashtots</p>
+      <p class="hero-arm">Մեսրոպ Մաշտոց · Հայոց գրևի ստեծծունը</p>
+      <div class="hero-buttons">
+        <a class="btn primary" href="#watch">Watch Trailer</a>
+        <a class="btn" href="#story">Explore the Story</a>
+      </div>
     </section>
 
     <section id="story" class="page section">
