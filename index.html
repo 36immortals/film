@@ -5,51 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>36 Immortals | Mesrop Mashtots</title>
   <meta name="description" content="A documentary about Mesrop Mashtots and the Armenian alphabet." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --black:      #050505;
+      --black: #050505;
       --soft-black: #0b0a07;
-      --gold:       #f4a51c;
-      --old-gold:   #b58b46;
-      --pale-gold:  #f6e7b6;
-      --red:        #9b1515;
-      --cyan:       #008aa3;
-      --white:      #f9f3e4;
-      --muted:      #b8a982;
-      --shadow:     rgba(0,0,0,0.7);
-      --serif:      'Cormorant Garamond', Georgia, serif;
-      --display:    'Cinzel', Georgia, serif;
+      --gold: #f4a51c;
+      --old-gold: #b58b46;
+      --pale-gold: #f6e7b6;
+      --red: #9b1515;
+      --cyan: #008aa3;
+      --white: #f9f3e4;
+      --muted: #b8a982;
+      --shadow: rgba(0, 0, 0, 0.7);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    a    { color: inherit; text-decoration: none; }
 
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 18% 8%,  rgba(244,165,28,0.12), transparent 32%),
-        radial-gradient(circle at 82% 70%,  rgba(155,21,21,0.12),  transparent 30%),
-        radial-gradient(circle at 55% 50%,  rgba(0,138,163,0.05),  transparent 60%),
-        linear-gradient(160deg, #000 0%, #080603 55%, #000 100%);
+        radial-gradient(circle at 25% 10%, rgba(244, 165, 28, 0.14), transparent 30%),
+        radial-gradient(circle at 85% 65%, rgba(155, 21, 21, 0.14), transparent 28%),
+        linear-gradient(135deg, #000 0%, #090806 55%, #000 100%);
       color: var(--white);
-      font-family: var(--serif);
+      font-family: Georgia, "Times New Roman", serif;
       overflow-x: hidden;
     }
 
     body::before {
-      content: "\u0531 \u0532 \u0533 \u0534 \u0535 \u0536 \u0537 \u0538 \u0539 \u053a \u053b \u053c \u053d \u053e \u053f \u0540 \u0541 \u0542 \u0543 \u0544 \u0545 \u0546 \u0547 \u0548 \u0549 \u054a \u054b \u054c \u054d \u054e \u054f \u0550 \u0551 \u0552 \u0553 \u0554 \u0555 \u0556";
+      content: "Ա Բ Գ Դ Ե Զ Է Ը Թ Ժ Ի Լ Խ Ծ Կ Հ Ձ Ղ Ճ Մ Յ Ն Շ Ո Չ Պ Ջ Ռ Ս Վ Տ Ր Ց Ւ Փ Ք Օ Ֆ";
       position: fixed;
       inset: 0;
       display: grid;
       place-items: center;
-      font-size: clamp(3.5rem, 12vw, 12rem);
-      line-height: 1.5;
-      letter-spacing: 0.2em;
-      color: rgba(181,139,70,0.04);
+      font-size: clamp(4rem, 14vw, 13rem);
+      line-height: 1.4;
+      letter-spacing: 0.18em;
+      color: rgba(181, 139, 70, 0.055);
       text-align: center;
       pointer-events: none;
       z-index: -2;
@@ -59,531 +52,398 @@
     body::after {
       content: "";
       position: fixed;
-      inset: 1.4rem;
-      border: 1px solid rgba(0,138,163,0.35);
+      inset: 1.2rem;
+      border: 1px solid rgba(0, 138, 163, 0.55);
       pointer-events: none;
-      z-index: 200;
+      z-index: 10;
     }
 
-    .wrap {
-      width: min(1200px, calc(100% - 52px));
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* NAV */
     header {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 100;
-      background: rgba(3,2,1,0.85);
-      backdrop-filter: blur(22px) saturate(1.5);
-      border-bottom: 1px solid rgba(181,139,70,0.18);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 1px solid rgba(181, 139, 70, 0.35);
     }
+
     .nav {
-      height: 70px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
     }
-    .logo { display: flex; align-items: center; gap: 0.75rem; }
-    .logo-num {
-      font-family: var(--display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-    .logo-divider {
-      width: 1px;
-      height: 30px;
-      background: rgba(181,139,70,0.4);
-    }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
-    .logo-title {
-      font-family: var(--display);
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--pale-gold);
-      letter-spacing: 0.1em;
-    }
-    .logo-sub {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-    .nav-links {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 2.8rem;
-      font-family: var(--display);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .nav-links a { transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      font-family: var(--display);
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(244,165,28,0.4);
-      padding: 0.52rem 1.2rem;
-      transition: 0.22s;
-    }
-    .nav-cta:hover { background: rgba(244,165,28,0.08); border-color: var(--gold); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: clamp(2.5rem, 5vw, 6rem);
-      padding: 9rem 0 5rem;
-    }
-    .hero-copy { display: flex; flex-direction: column; }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 2.2rem;
-    }
-    .hero-eyebrow::before {
-      content: "";
-      width: 2.5rem;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(244,165,28,0.7));
-    }
-    .hero-eyebrow::after {
-      content: "";
-      width: 2.5rem;
-      height: 1px;
-      background: linear-gradient(270deg, transparent, rgba(244,165,28,0.7));
-    }
-    .hero-eyebrow span {
-      font-family: var(--display);
-      font-size: 0.66rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .hero-number {
-      font-family: var(--display);
-      font-size: clamp(6rem, 16vw, 16rem);
-      font-weight: 700;
-      line-height: 0.78;
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--gold);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.15em;
-      user-select: none;
-    }
-    .hero-title {
-      font-family: var(--display);
-      font-size: clamp(2.6rem, 6vw, 5.8rem);
-      font-weight: 600;
-      line-height: 0.95;
-      color: var(--pale-gold);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-    }
-    .hero-subtitle {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 3vw, 2.8rem);
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
       font-style: italic;
-      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    .brand strong {
+      color: var(--gold);
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--pale-gold);
+      font-size: clamp(1.1rem, 2vw, 1.7rem);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
       color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-    .hero-armenian {
-      font-size: 1.1rem;
-      color: rgba(181,139,70,0.55);
+      font-size: 0.92rem;
       letter-spacing: 0.08em;
-      margin-bottom: 2.2rem;
+      text-transform: uppercase;
     }
-    .hero-rule {
-      width: 3.5rem;
-      height: 1px;
-      background: var(--red);
-      margin-bottom: 1.8rem;
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      min-height: calc(100vh - 82px);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: 5rem 0;
     }
-    .hero-desc {
-      max-width: 520px;
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: #ccba8a;
-      font-weight: 300;
-      margin-bottom: 2.8rem;
+
+    .hero-copy { position: relative; }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.78rem;
+      margin-bottom: 1.1rem;
     }
-    .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+    h1 {
+      font-size: clamp(3.2rem, 8.5vw, 8.6rem);
+      line-height: 0.84;
+      color: var(--gold);
+      font-style: italic;
+      text-shadow: 0 12px 35px var(--shadow);
+    }
+
+    h1 span {
+      display: block;
+      color: var(--pale-gold);
+      font-size: clamp(1.3rem, 3vw, 2.7rem);
+      font-style: normal;
+      letter-spacing: 0.04em;
+      margin-top: 1.4rem;
+    }
+
+    .armenian-title {
+      margin-top: 1.1rem;
+      color: var(--white);
+      font-size: clamp(1.3rem, 3vw, 2.3rem);
+      text-shadow: 0 0 20px rgba(244, 165, 28, 0.25);
+    }
+
+    .description {
+      margin-top: 1.8rem;
+      max-width: 650px;
+      color: #d8c99f;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      border-left: 2px solid var(--red);
+      padding-left: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      font-family: var(--display);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 1.4rem;
+      border: 1px solid var(--red);
+      background: rgba(155, 21, 21, 0.18);
+      color: var(--pale-gold);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.9rem 1.8rem;
-      transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
+      font-size: 0.82rem;
+      transition: 0.25s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--gold), #c86800); color: #180900; font-weight: 700; }
-    .btn-primary:hover { box-shadow: 0 14px 40px rgba(244,165,28,0.28); }
-    .btn-outline { border: 1px solid rgba(155,21,21,0.7); color: var(--pale-gold); background: rgba(155,21,21,0.08); }
-    .btn-outline:hover { border-color: var(--red); background: rgba(155,21,21,0.18); }
 
-    /* POSTER */
-    .poster-wrap { position: relative; }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--gold), #d5780c);
+      color: #1b0f00;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(244, 165, 28, 0.18);
+    }
+
     .poster {
       position: relative;
-      aspect-ratio: 2/3;
-      max-height: 800px;
+      min-height: 640px;
+      border: 1px solid var(--red);
       background:
-        linear-gradient(175deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%),
-        radial-gradient(ellipse at 42% 28%, rgba(244,165,28,0.3), transparent 52%),
-        radial-gradient(ellipse at 68% 82%, rgba(155,21,21,0.25), transparent 48%),
-        linear-gradient(150deg, #140a02, #080400, #050200);
-      border: 1px solid rgba(181,139,70,0.38);
-      overflow: hidden;
-      box-shadow: 0 80px 140px rgba(0,0,0,0.85), 0 20px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
-    }
-    .poster-b1, .poster-b2 { position: absolute; pointer-events: none; z-index: 4; }
-    .poster-b1 { inset: 14px; border: 1px solid rgba(181,139,70,0.22); }
-    .poster-b2 { inset: 28px; border: 1px solid rgba(0,138,163,0.15); }
-    .poster-topline {
-      position: absolute;
-      inset: 0 0 auto;
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-      z-index: 5;
-    }
-    .poster-letter {
-      position: absolute;
-      font-family: var(--serif);
-      font-size: clamp(4.5rem, 8vw, 7.5rem);
-      font-weight: 700;
-      font-style: italic;
-      color: rgba(181,139,70,0.45);
-      line-height: 1;
-      user-select: none;
-      z-index: 3;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-    .poster-letter.tl { top: 6%; left: 7%; }
-    .poster-letter.tr { top: 6%; right: 7%; transform: scaleX(-1); }
-    .poster-letter.bl { bottom: 22%; left: 5%; }
-    .poster-center {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 3rem;
-    }
-    .poster-letters-grid {
-      font-size: clamp(1.25rem, 2.2vw, 1.9rem);
-      color: rgba(246,231,182,0.78);
-      line-height: 2.1;
-      letter-spacing: 0.32em;
-      text-align: center;
-      text-shadow: 0 0 40px rgba(244,165,28,0.18);
-    }
-    .poster-footer {
-      position: absolute;
-      inset: auto 0 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.88) 55%, transparent 100%);
-      padding: 3.5rem 2rem 2.2rem;
-      text-align: center;
-      z-index: 5;
-    }
-    .poster-footer-name {
-      font-family: var(--display);
-      font-size: clamp(1rem, 1.8vw, 1.5rem);
-      color: var(--muted);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .poster-footer-armenian {
-      font-family: var(--serif);
-      font-size: clamp(1.4rem, 2.6vw, 2.5rem);
-      font-style: italic;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .poster-badge {
-      position: absolute;
-      top: 2.2rem;
-      right: 2.8rem;
-      font-family: var(--display);
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid rgba(184,169,130,0.35);
-      padding: 0.22rem 0.55rem;
-      z-index: 6;
-    }
-
-    /* TAGLINE BAND */
-    .tagline-band {
-      border-top: 1px solid rgba(181,139,70,0.15);
-      border-bottom: 1px solid rgba(181,139,70,0.15);
-      background: linear-gradient(100deg, rgba(155,21,21,0.08), rgba(0,0,0,0) 40%, rgba(0,138,163,0.06) 70%, rgba(155,21,21,0.06));
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .tagline-band blockquote {
-      font-family: var(--serif);
-      font-size: clamp(1.4rem, 3vw, 2.4rem);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--pale-gold);
-      line-height: 1.45;
-      max-width: 820px;
-      margin: 0 auto 1rem;
-    }
-    .tagline-band cite {
-      display: block;
-      font-family: var(--display);
-      font-size: 0.68rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-style: normal;
-    }
-
-    /* SECTIONS */
-    .section { padding: 7.5rem 0; }
-    .section-eyebrow { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.1rem; }
-    .section-eyebrow::before { content: ""; width: 2.2rem; height: 1px; background: var(--gold); }
-    .section-eyebrow span {
-      font-family: var(--display);
-      font-size: 0.66rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .section-title {
-      font-family: var(--display);
-      font-size: clamp(2rem, 4.5vw, 4rem);
-      font-weight: 600;
-      color: var(--pale-gold);
-      line-height: 1.1;
-      letter-spacing: 0.04em;
-      margin-bottom: 3.5rem;
-    }
-
-    /* STORY */
-    #story { border-top: 1px solid rgba(181,139,70,0.14); }
-    .story-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: rgba(181,139,70,0.1);
-    }
-    .story-card {
-      background: var(--black);
-      padding: 3rem 2.4rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-    .story-card:hover { background: rgba(10,7,3,0.98); }
-    .story-card::after {
-      content: attr(data-letter);
-      position: absolute;
-      right: -0.5rem;
-      bottom: -2.5rem;
-      font-family: var(--serif);
-      font-size: 12rem;
-      font-style: italic;
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(181,139,70,0.055);
-      pointer-events: none;
-      transition: color 0.3s;
-    }
-    .story-card:hover::after { color: rgba(181,139,70,0.1); }
-    .story-card-chapter {
-      font-family: var(--display);
-      font-size: 0.62rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1.2rem;
-    }
-    .story-card-line { width: 2rem; height: 2px; background: var(--red); margin-bottom: 1.4rem; }
-    .story-card h3 {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
-    .story-card p {
-      font-size: 1.05rem;
-      color: #c9b47e;
-      line-height: 1.85;
-      font-weight: 300;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ALPHABET */
-    #alphabet { border-top: 1px solid rgba(181,139,70,0.14); }
-    .alphabet-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: end;
-      margin-bottom: 3.5rem;
-    }
-    .alphabet-desc { font-size: 1.1rem; color: #cdb87c; line-height: 1.85; font-weight: 300; }
-    .alphabet-stat { text-align: right; }
-    .alphabet-stat-num {
-      font-family: var(--display);
-      font-size: clamp(5rem, 11vw, 10rem);
-      font-weight: 700;
-      line-height: 0.85;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(244,165,28,0.45);
-    }
-    .alphabet-stat-label {
-      font-family: var(--display);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.6rem;
-    }
-    .letters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
-      gap: 2px;
-      background: rgba(181,139,70,0.1);
-    }
-    .letter-cell {
-      background: var(--black);
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      font-family: var(--serif);
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
-      font-weight: 400;
-      color: rgba(246,231,182,0.65);
-      transition: all 0.22s;
-      cursor: default;
-    }
-    .letter-cell:hover {
-      background: rgba(244,165,28,0.07);
-      color: var(--gold);
-      transform: scale(1.08);
-      z-index: 1;
-      position: relative;
-    }
-
-    /* FILM INFO */
-    #film { border-top: 1px solid rgba(181,139,70,0.14); }
-    .film-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 5rem; align-items: start; }
-    .film-specs { display: flex; flex-direction: column; }
-    .spec-row {
-      display: grid;
-      grid-template-columns: 0.75fr 1fr;
-      gap: 1rem;
-      padding: 1.15rem 0;
-      border-bottom: 1px solid rgba(181,139,70,0.1);
-      align-items: baseline;
-    }
-    .spec-row:first-child { border-top: 1px solid rgba(181,139,70,0.1); }
-    .spec-label {
-      font-family: var(--display);
-      font-size: 0.62rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .spec-value { font-size: 1rem; color: #d8c99f; line-height: 1.55; }
-    .credits-panel {
-      background: rgba(0,0,0,0.52);
-      border: 1px solid rgba(181,139,70,0.18);
-      position: relative;
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.76)),
+        radial-gradient(circle at center, rgba(244, 165, 28, 0.25), transparent 42%),
+        #070604;
+      box-shadow: 0 35px 100px rgba(0,0,0,0.75);
       overflow: hidden;
     }
-    .credits-panel::before {
+
+    .poster::before,
+    .poster::after {
       content: "";
       position: absolute;
-      inset: 0 0 auto;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      inset: 24px;
+      border: 1px solid rgba(181, 139, 70, 0.38);
+      pointer-events: none;
     }
-    .credits-panel-head {
-      padding: 1.6rem 2.2rem 1.1rem;
-      font-family: var(--display);
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
+
+    .poster::after {
+      inset: 42px;
+      border-color: rgba(0, 138, 163, 0.28);
+    }
+
+    .circle-scene {
+      position: absolute;
+      width: min(72%, 430px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      top: 16%;
+      left: 50%;
+      transform: translateX(-50%);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255, 206, 93, 0.55), transparent 20%),
+        radial-gradient(circle at 55% 52%, rgba(120, 45, 10, 0.85), rgba(0,0,0,0.96) 72%),
+        linear-gradient(135deg, #6d2f08, #120800);
+      border: 1px solid rgba(244, 165, 28, 0.28);
+      box-shadow: inset 0 -40px 90px rgba(0,0,0,0.75), 0 30px 80px rgba(0,0,0,0.7);
+      overflow: hidden;
+    }
+
+    .parchment {
+      position: absolute;
+      width: 62%;
+      aspect-ratio: 0.78;
+      top: 20%;
+      left: 22%;
+      transform: rotate(-10deg);
+      background: linear-gradient(135deg, #f7cf7a, #bd741d 48%, #6e2f08);
+      color: #2d1500;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      font-size: clamp(1.1rem, 3vw, 2.2rem);
+      line-height: 1.08;
+      text-align: center;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.75);
+    }
+
+    .ornament {
+      position: absolute;
+      color: rgba(181, 139, 70, 0.62);
+      font-size: 8rem;
+      line-height: 1;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+      user-select: none;
+    }
+
+    .ornament.one  { top: 7%;  left: 6%;  transform: rotate(-16deg); }
+    .ornament.two  { bottom: 8%; right: 7%; transform: rotate(12deg); }
+    .ornament.three { bottom: 24%; left: 4%; transform: rotate(-8deg); }
+
+    .poster-caption {
+      position: absolute;
+      left: 50%;
+      bottom: 7%;
+      transform: translateX(-50%);
+      width: 80%;
+      text-align: center;
+    }
+
+    .poster-caption h2 {
+      color: var(--pale-gold);
+      font-size: clamp(1.4rem, 3vw, 2.3rem);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .poster-caption p {
+      color: var(--gold);
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .section {
+      padding: 6rem 0;
+      border-top: 1px solid rgba(181, 139, 70, 0.22);
+    }
+
+    .section-title {
+      display: grid;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-title small {
+      color: var(--gold);
       text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid rgba(181,139,70,0.1);
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
     }
-    .credit-item {
+
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      color: var(--pale-gold);
+      font-weight: 400;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .card {
+      min-height: 250px;
+      background: rgba(5, 5, 5, 0.78);
+      border: 1px solid rgba(155, 21, 21, 0.8);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: attr(data-letter);
+      position: absolute;
+      right: 1rem;
+      bottom: -1.2rem;
+      color: rgba(181, 139, 70, 0.12);
+      font-size: 9rem;
+      line-height: 1;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #cfbf91;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-band {
+      margin-top: 3rem;
+      padding: clamp(2rem, 5vw, 4rem);
+      border: 1px solid rgba(0, 138, 163, 0.55);
+      background:
+        linear-gradient(90deg, rgba(155, 21, 21, 0.12), rgba(244, 165, 28, 0.08)),
+        rgba(0,0,0,0.45);
+      text-align: center;
+    }
+
+    .quote-band p {
+      color: var(--pale-gold);
+      font-size: clamp(1.5rem, 3vw, 2.6rem);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    .film-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .info-list {
+      border-left: 1px solid var(--red);
+      padding-left: 1.4rem;
+      color: #d9c99b;
+      line-height: 2;
+    }
+
+    .credits {
+      background: rgba(0,0,0,0.72);
+      border: 1px solid rgba(181,139,70,0.35);
+      padding: 1.5rem;
+    }
+
+    .credits div {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      padding: 1.05rem 2.2rem;
-      border-bottom: 1px solid rgba(181,139,70,0.07);
-      gap: 1.5rem;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(181,139,70,0.2);
+      color: #d8c99f;
     }
-    .credit-item:last-child { border-bottom: none; }
-    .credit-role {
-      font-family: var(--display);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .credit-name { font-size: 1rem; color: var(--pale-gold); text-align: right; }
 
-    /* WATCH */
-    #watch { border-top: 1px solid rgba(181,139,70,0.14); }
-    .watch-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .credits div:last-child { border-bottom: 0; }
+    .credits span:first-child { color: var(--gold); }
+
+    /* ── WATCH / TRAILER ─── */
+    .watch-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
     .watch-player {
       aspect-ratio: 16/9;
-      background: radial-gradient(ellipse at center, rgba(244,165,28,0.07), transparent 65%), rgba(0,0,0,0.55);
-      border: 1px solid rgba(181,139,70,0.22);
+      background:
+        radial-gradient(ellipse at center, rgba(244,165,28,0.08), transparent 65%),
+        rgba(0,0,0,0.55);
+      border: 1px solid rgba(181,139,70,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
       transition: border-color 0.25s;
-      cursor: pointer;
     }
+
     .watch-player::before {
       content: "";
       position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(0,138,163,0.18);
+      inset: 14px;
+      border: 1px solid rgba(0, 138, 163, 0.3);
       pointer-events: none;
     }
-    .watch-player:hover { border-color: rgba(244,165,28,0.45); }
-    .play-btn {
-      width: 76px; height: 76px;
-      border: 1px solid rgba(244,165,28,0.45);
+
+    .watch-player:hover { border-color: rgba(244,165,28,0.55); }
+
+    .play-circle {
+      width: 72px;
+      height: 72px;
+      border: 1px solid rgba(244,165,28,0.5);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -592,249 +452,177 @@
       position: relative;
       z-index: 1;
     }
-    .play-btn::after {
+
+    .play-circle::after {
       content: "";
       width: 0; height: 0;
       border-style: solid;
-      border-width: 13px 0 13px 22px;
+      border-width: 12px 0 12px 20px;
       border-color: transparent transparent transparent var(--gold);
-      margin-left: 6px;
+      margin-left: 5px;
     }
-    .watch-player:hover .play-btn {
+
+    .watch-player:hover .play-circle {
       background: rgba(244,165,28,0.1);
       border-color: var(--gold);
-      transform: scale(1.06);
-      box-shadow: 0 0 40px rgba(244,165,28,0.15);
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(244,165,28,0.15);
     }
-    .watch-copy .section-title { margin-bottom: 1.4rem; }
-    .watch-copy p { font-size: 1.1rem; color: #cdb87c; line-height: 1.85; font-weight: 300; margin-bottom: 2.6rem; }
 
-    /* FOOTER */
-    footer { border-top: 1px solid rgba(181,139,70,0.18); padding: 2.8rem 0; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .footer-logo { font-family: var(--display); font-size: 1.1rem; color: var(--gold); letter-spacing: 0.08em; }
-    .footer-arm { font-size: 0.9rem; color: rgba(181,139,70,0.38); letter-spacing: 0.14em; }
-    .footer-copy { font-family: var(--display); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    footer {
+      padding: 2.4rem 0;
+      border-top: 1px solid rgba(181, 139, 70, 0.25);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
 
-    /* RESPONSIVE */
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
       body::after { inset: 0.6rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 7rem 0 4rem; min-height: auto; }
-      .poster-wrap { max-width: 360px; margin: 0 auto; }
-      .story-grid { grid-template-columns: 1fr; }
-      .alphabet-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-      .alphabet-stat { text-align: left; }
-      .film-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .watch-layout { grid-template-columns: 1fr; gap: 3.5rem; }
-      .footer-inner { flex-direction: column; text-align: center; }
+      .nav { flex-direction: column; align-items: flex-start; padding: 1.2rem 0; }
+      .nav-links { flex-wrap: wrap; }
+      .hero { grid-template-columns: 1fr; padding: 3rem 0; }
+      .poster { min-height: 560px; }
+      .grid, .film-info, .watch-layout { grid-template-columns: 1fr; }
     }
-    @media (max-width: 560px) {
-      .section { padding: 5rem 0; }
-      .letters-grid { grid-template-columns: repeat(auto-fill, minmax(62px, 1fr)); }
-      .hero-number { font-size: clamp(5rem, 22vw, 8rem); }
+
+    @media (max-width: 520px) {
+      .page { width: min(100% - 28px, 1180px); }
+      .nav-links { font-size: 0.75rem; }
+      .poster { min-height: 500px; }
+      .ornament { font-size: 5.2rem; }
+      .section { padding: 4rem 0; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <nav class="wrap nav">
-      <a class="logo" href="#top" aria-label="36 Immortals home">
-        <span class="logo-num">36</span>
-        <span class="logo-divider"></span>
-        <span class="logo-text">
-          <span class="logo-title">Immortals</span>
-          <span class="logo-sub">Documentary Film</span>
-        </span>
+    <nav class="page nav">
+      <a class="brand" href="#top" aria-label="36 Immortals home">
+        <strong>36</strong><span>Immortals</span>
       </a>
-      <div class="nav-links" aria-label="Primary navigation">
+      <div class="nav-links">
         <a href="#story">Story</a>
         <a href="#alphabet">Alphabet</a>
         <a href="#film">Film Info</a>
         <a href="#watch">Watch</a>
       </div>
-      <a class="nav-cta" href="mailto:36immortals@arnoma.us">Get in Touch</a>
     </nav>
   </header>
 
   <main id="top">
-
-    <section class="wrap hero" aria-label="Hero">
+    <section class="page hero">
       <div class="hero-copy">
-        <div class="hero-eyebrow"><span>A Documentary Film</span></div>
-        <p class="hero-number" aria-hidden="true">36</p>
-        <h1 class="hero-title">Immortals</h1>
-        <p class="hero-subtitle">Mesrop Mashtots</p>
-        <p class="hero-armenian">Մեսրոպ Մաշտոց · Հայոց գրևի ստեծծունը</p>
-        <div class="hero-rule" aria-hidden="true"></div>
-        <p class="hero-desc">
-          A cinematic journey into the creation of the Armenian alphabet &mdash;
-          the vision of Mesrop Mashtots and the thirty-six letters that have
-          protected Armenian identity, faith, literature, and memory for
-          over 1,600 years.
+        <p class="eyebrow">A documentary film about the Armenian alphabet</p>
+        <h1>36 Immortals <span>Mesrop Mashtots</span></h1>
+        <p class="armenian-title">Մեսրոպ Մաշտոց · Հայոց գրևի ստեծծունը</p>
+        <p class="description">
+          A cinematic journey into the creation of the Armenian alphabet, the vision of Mesrop Mashtots, and the letters that protected Armenian identity, faith, literature, and memory for centuries.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#watch">&#9654;&nbsp;&nbsp;Watch Trailer</a>
-          <a class="btn btn-outline" href="#story">Explore the Story</a>
+        <div class="buttons">
+          <a class="btn primary" href="#watch">Watch Trailer</a>
+          <a class="btn" href="#story">Explore the Story</a>
         </div>
       </div>
 
-      <aside class="poster-wrap" aria-label="Documentary poster">
-        <div class="poster">
-          <div class="poster-topline" aria-hidden="true"></div>
-          <div class="poster-b1" aria-hidden="true"></div>
-          <div class="poster-b2" aria-hidden="true"></div>
-          <div class="poster-badge" aria-hidden="true">Documentary</div>
-          <span class="poster-letter tl" aria-hidden="true">Մ</span>
-          <span class="poster-letter tr" aria-hidden="true">Ա</span>
-          <span class="poster-letter bl" aria-hidden="true">Հ</span>
-          <div class="poster-center">
-            <div class="poster-letters-grid" aria-label="Armenian alphabet">
-              Ա Բ Գ Դ Ե Զ Է Ը Թ Ժ<br>
-              Ի Լ Խ Ծ Կ Հ Ձ Ղ Ճ Մ<br>
-              Յ Ն Շ Ո Չ Պ Ջ Ռ Ս Վ<br>
-              Տ Ր Ց Ւ Փ Ք Օ Ֆ
-            </div>
-          </div>
-          <div class="poster-footer">
-            <p class="poster-footer-name">Mesrop Mashtots</p>
-            <p class="poster-footer-armenian">Հայոց Այբուբեն</p>
-          </div>
+      <aside class="poster" aria-label="Documentary poster design">
+        <div class="ornament one">Մ</div>
+        <div class="ornament two">Ա</div>
+        <div class="ornament three">Յ</div>
+        <div class="circle-scene">
+          <div class="parchment">ԱԲԳԴԵ
+ԶԷԸԹԺ
+ԻԼԽԾԿ
+ՀՁՂՃՄ</div>
+        </div>
+        <div class="poster-caption">
+          <h2>Mesrop Mashtots</h2>
+          <p>Հայոց Այբուբեն</p>
         </div>
       </aside>
     </section>
 
-    <div class="tagline-band">
-      <div class="wrap">
-        <blockquote>
-          &ldquo;To know wisdom and instruction, to perceive the words of understanding.&rdquo;
-        </blockquote>
-        <cite>Proverbs 1:2 &mdash; The first verse translated into Armenian, 405 AD</cite>
+    <section id="story" class="page section">
+      <div class="section-title">
+        <small>The Story</small>
+        <h2>When letters became a nation&#8217;s voice</h2>
       </div>
-    </div>
+      <div class="grid">
+        <article class="card" data-letter="Ա">
+          <h3>The Vision</h3>
+          <p>Mesrop Mashtots saw that a nation needed its own written language to preserve knowledge, prayer, law, and education.</p>
+        </article>
+        <article class="card" data-letter="Մ">
+          <h3>The Mission</h3>
+          <p>The alphabet became more than writing. It became a bridge between generations and a shield for Armenian culture.</p>
+        </article>
+        <article class="card" data-letter="Գ">
+          <h3>The Legacy</h3>
+          <p>Through manuscripts, schools, churches, and books, the Armenian letters continued to carry memory across time.</p>
+        </article>
+      </div>
+      <div class="quote-band">
+        <p>&#8220;To know wisdom and instruction, to perceive the words of understanding.&#8221;</p>
+      </div>
+    </section>
 
-    <section id="story" class="section">
-      <div class="wrap">
-        <div class="section-eyebrow"><span>The Story</span></div>
-        <h2 class="section-title">When letters became<br>a nation&rsquo;s voice</h2>
-        <div class="story-grid">
-          <article class="story-card" data-letter="Ա">
-            <p class="story-card-chapter">Chapter I</p>
-            <div class="story-card-line" aria-hidden="true"></div>
-            <h3>The Vision</h3>
-            <p>Mesrop Mashtots understood that a nation needs its own written language to preserve knowledge, prayer, law, and education. Without letters of its own, faith and culture would dissolve into borrowed tongues.</p>
-          </article>
-          <article class="story-card" data-letter="Մ">
-            <p class="story-card-chapter">Chapter II</p>
-            <div class="story-card-line" aria-hidden="true"></div>
-            <h3>The Mission</h3>
-            <p>The alphabet became more than writing. It became a bridge between generations and a shield for Armenian culture &mdash; forged through divine inspiration, scholarship, and a people&rsquo;s longing to be heard across time.</p>
-          </article>
-          <article class="story-card" data-letter="Գ">
-            <p class="story-card-chapter">Chapter III</p>
-            <div class="story-card-line" aria-hidden="true"></div>
-            <h3>The Legacy</h3>
-            <p>Through manuscripts, schools, churches, and books, the Armenian letters carried memory across centuries of conquest, diaspora, and survival. Thirty-six letters &mdash; immortal and enduring.</p>
-          </article>
+    <section id="alphabet" class="page section">
+      <div class="section-title">
+        <small>The Alphabet</small>
+        <h2>Thirty-six immortal letters</h2>
+      </div>
+      <p class="description">
+        The original Armenian alphabet contained 36 letters. Each letter became part of a sacred cultural architecture: language, literature, identity, and survival.
+      </p>
+    </section>
+
+    <section id="film" class="page section">
+      <div class="film-info">
+        <div>
+          <div class="section-title">
+            <small>Film Details</small>
+            <h2>Documentary information</h2>
+          </div>
+          <p class="info-list">
+            Title: 36 Immortals<br>
+            Subject: Mesrop Mashtots and the Armenian alphabet<br>
+            Genre: Historical documentary<br>
+            Languages: English and Armenian<br>
+            Style: Ancient manuscript, gold ornament, black cinematic background
+          </p>
+        </div>
+        <div class="credits">
+          <div><span>Director</span><span>Hrachya Vardanyan</span></div>
+          <div><span>Country</span><span>Armenia / USA</span></div>
+          <div><span>Theme</span><span>Language, faith, identity</span></div>
+          <div><span>Visual tone</span><span>Black, gold, red, antique cyan</span></div>
         </div>
       </div>
     </section>
 
-    <section id="alphabet" class="section">
-      <div class="wrap">
-        <div class="section-eyebrow"><span>The Alphabet</span></div>
-        <div class="alphabet-intro">
-          <div>
-            <h2 class="section-title" style="margin-bottom:1.5rem;">Thirty-six<br>immortal letters</h2>
-            <p class="alphabet-desc">
-              The original Armenian alphabet contained 36 letters, created by Mesrop Mashtots in 405&nbsp;AD.
-              Each letter was designed to represent the unique sounds of the Armenian language &mdash;
-              a sacred architecture of language, literature, identity, and survival.
-            </p>
-          </div>
-          <div class="alphabet-stat" aria-label="36 original letters, 405 AD">
-            <div class="alphabet-stat-num" aria-hidden="true">36</div>
-            <div class="alphabet-stat-label">Original Letters &middot; 405 AD</div>
-          </div>
-        </div>
-        <div class="letters-grid" aria-label="The 36 Armenian letters">
-          <div class="letter-cell">Ա</div><div class="letter-cell">Բ</div>
-          <div class="letter-cell">Գ</div><div class="letter-cell">Դ</div>
-          <div class="letter-cell">Ե</div><div class="letter-cell">Զ</div>
-          <div class="letter-cell">Է</div><div class="letter-cell">Ը</div>
-          <div class="letter-cell">Թ</div><div class="letter-cell">Ժ</div>
-          <div class="letter-cell">Ի</div><div class="letter-cell">Լ</div>
-          <div class="letter-cell">Խ</div><div class="letter-cell">Ծ</div>
-          <div class="letter-cell">Կ</div><div class="letter-cell">Հ</div>
-          <div class="letter-cell">Ձ</div><div class="letter-cell">Ղ</div>
-          <div class="letter-cell">Ճ</div><div class="letter-cell">Մ</div>
-          <div class="letter-cell">Յ</div><div class="letter-cell">Ն</div>
-          <div class="letter-cell">Շ</div><div class="letter-cell">Ո</div>
-          <div class="letter-cell">Չ</div><div class="letter-cell">Պ</div>
-          <div class="letter-cell">Ջ</div><div class="letter-cell">Ռ</div>
-          <div class="letter-cell">Ս</div><div class="letter-cell">Վ</div>
-          <div class="letter-cell">Տ</div><div class="letter-cell">Ր</div>
-          <div class="letter-cell">Ց</div><div class="letter-cell">Ւ</div>
-          <div class="letter-cell">Փ</div><div class="letter-cell">Ք</div>
-        </div>
+    <section id="watch" class="page section">
+      <div class="section-title">
+        <small>Watch</small>
+        <h2>Trailer coming soon</h2>
       </div>
-    </section>
-
-    <section id="film" class="section">
-      <div class="wrap">
-        <div class="section-eyebrow"><span>Film Details</span></div>
-        <h2 class="section-title">Documentary<br>information</h2>
-        <div class="film-layout">
-          <div class="film-specs">
-            <div class="spec-row"><span class="spec-label">Title</span><span class="spec-value">36 Immortals</span></div>
-            <div class="spec-row"><span class="spec-label">Subject</span><span class="spec-value">Mesrop Mashtots and the Armenian Alphabet</span></div>
-            <div class="spec-row"><span class="spec-label">Genre</span><span class="spec-value">Historical Documentary</span></div>
-            <div class="spec-row"><span class="spec-label">Languages</span><span class="spec-value">English &amp; Armenian</span></div>
-            <div class="spec-row"><span class="spec-label">Country</span><span class="spec-value">Armenia / United States</span></div>
-            <div class="spec-row"><span class="spec-label">Theme</span><span class="spec-value">Language, Faith &amp; Identity</span></div>
-            <div class="spec-row"><span class="spec-label">Period</span><span class="spec-value">405 AD &mdash; Armenian Golden Age</span></div>
-          </div>
-          <div class="credits-panel">
-            <div class="credits-panel-head">Principal Credits</div>
-            <div class="credit-item"><span class="credit-role">Director</span><span class="credit-name">Hrachya Vardanyan</span></div>
-            <div class="credit-item"><span class="credit-role">Subject</span><span class="credit-name">Mesrop Mashtots &nbsp;362&ndash;440 AD</span></div>
-            <div class="credit-item"><span class="credit-role">Alphabet</span><span class="credit-name">Created 405 AD</span></div>
-            <div class="credit-item"><span class="credit-role">Visual Tone</span><span class="credit-name">Black, Gold, Red, Antique Cyan</span></div>
-            <div class="credit-item">
-              <span class="credit-role">Contact</span>
-              <span class="credit-name"><a href="mailto:36immortals@arnoma.us" style="color:var(--pale-gold);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(244,165,28,0.35);">36immortals@arnoma.us</a></span>
-            </div>
+      <div class="watch-layout">
+        <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
+          <div class="play-circle"></div>
+        </a>
+        <div>
+          <p class="description" style="margin-top:0;">
+            Connect with the production team to receive screening information, early trailer access, or festival programming details.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="mailto:36immortals@arnoma.us">Contact the Team</a>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="watch" class="section">
-      <div class="wrap">
-        <div class="watch-layout">
-          <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
-            <div class="play-btn" aria-hidden="true"></div>
-          </a>
-          <div class="watch-copy">
-            <div class="section-eyebrow"><span>Watch</span></div>
-            <h2 class="section-title">Trailer<br>coming soon</h2>
-            <p>Connect with the production team to receive screening information, early trailer access, or festival programming details.</p>
-            <a class="btn btn-primary" href="mailto:36immortals@arnoma.us">Contact the Team</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
-    <div class="wrap footer-inner">
-      <span class="footer-logo">36 Immortals</span>
-      <span class="footer-arm" aria-hidden="true">Ա Բ Գ Դ Ե Զ Է</span>
-      <span class="footer-copy">&copy; Armenian Alphabet Documentary</span>
-    </div>
+    <div class="page">&#169; 36 Immortals &middot; Armenian Alphabet Documentary</div>
   </footer>
-
 </body>
 </html>
