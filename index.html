@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>  <meta charset="UTF-8" />
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function() { window.scrollTo(0, 0); });
+    window.addEventListener('pageshow', function() { window.scrollTo(0, 0); });
+  </script>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>36 Immortals | Mesrop Mashtots</title>
   <meta name="description" content="A documentary about Mesrop Mashtots and the Armenian alphabet." />
@@ -567,13 +573,7 @@
       .section { padding: 4rem 0; }
     }
   </style>
-  <script>
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('load', function() { window.scrollTo(0, 0); });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() { window.scrollTo(0, 0); });
-  </script>
+
 </head>
 <body>
 
