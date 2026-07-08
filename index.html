@@ -80,13 +80,18 @@
       inset: 0;
       overflow: hidden;
       pointer-events: none;
-      z-index: -1;
+      z-index: 1;
     }
     .bg-letters img {
       position: absolute;
       mix-blend-mode: screen;
       user-select: none;
       pointer-events: none;
+    }
+
+    header, main, footer {
+      position: relative;
+      z-index: 2;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -601,42 +606,22 @@
 
   <!-- ══ LETTER ART BACKGROUND ══════════════════════════ -->
   <div class="bg-letters" aria-hidden="true">
+    <!-- Evenly distributed 3x4 field with varied opacities -->
+    <img src="Letters/A.png"  style="width:28vw; max-height:28vh; object-fit:contain; top:10%; left:12%; transform:translate(-50%,-50%) rotate(-12deg); opacity:0.24">
+    <img src="Letters/N.png"  style="width:24vw; max-height:24vh; object-fit:contain; top:10%; left:50%; transform:translate(-50%,-50%) rotate(8deg);   opacity:0.14">
+    <img src="Letters/M.png"  style="width:26vw; max-height:26vh; object-fit:contain; top:10%; left:86%; transform:translate(-50%,-50%) rotate(-10deg); opacity:0.20">
 
-    <!-- ── LEFT SIDE · 3 non-overlapping zones ──────────── -->
+    <img src="Letters/G2n.png" style="width:24vw; max-height:24vh; object-fit:contain; top:35%; left:14%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.12">
+    <img src="Letters/B.png"  style="width:30vw; max-height:30vh; object-fit:contain; top:35%; left:50%; transform:translate(-50%,-50%) rotate(12deg);  opacity:0.22">
+    <img src="Letters/I.png" style="width:22vw; max-height:22vh; object-fit:contain; top:35%; left:84%; transform:translate(-50%,-50%) rotate(-14deg); opacity:0.16">
 
-    <!-- Zone L1 · top anchor · bleeds in from upper-left -->
-    <img src="Letters/A.png"
-         style="width:62vw; max-height:50vh; object-fit:contain;
-                top:-6%; left:-32%; transform:rotate(-13deg); opacity:0.20">
+    <img src="Letters/Y.png"  style="width:32vw; max-height:32vh; object-fit:contain; top:62%; left:16%; transform:translate(-50%,-50%) rotate(9deg);   opacity:0.19">
+    <img src="Letters/T.png"  style="width:20vw; max-height:20vh; object-fit:contain; top:62%; left:50%; transform:translate(-50%,-50%) rotate(-8deg);  opacity:0.11">
+    <img src="Letters/GN.png"  style="width:26vw; max-height:26vh; object-fit:contain; top:62%; left:84%; transform:translate(-50%,-50%) rotate(11deg);  opacity:0.18">
 
-    <!-- Zone L2 · mid letter · fully visible, clear breathing room -->
-    <img src="Letters/G2.png"
-         style="width:36vw; max-height:28vh; object-fit:contain;
-                top:50%; left:-12%; transform:rotate(-9deg); opacity:0.22">
-
-    <!-- Zone L3 · bottom anchor · emerges from lower-left -->
-    <img src="Letters/D2.png"
-         style="width:58vw; max-height:44vh; object-fit:contain;
-                top:82%; left:-28%; transform:rotate(-7deg); opacity:0.21">
-
-
-    <!-- ── RIGHT SIDE · 3 non-overlapping zones ─────────── -->
-
-    <!-- Zone R1 · top anchor · bleeds in from upper-right -->
-    <img src="Letters/N.png"
-         style="width:64vw; max-height:52vh; object-fit:contain;
-                top:-8%; right:-34%; transform:rotate(14deg); opacity:0.19">
-
-    <!-- Zone R2 · mid letter · fully visible -->
-    <img src="Letters/G.png"
-         style="width:34vw; max-height:28vh; object-fit:contain;
-                top:50%; right:-12%; transform:rotate(-11deg); opacity:0.22">
-
-    <!-- Zone R3 · bottom anchor · emerges from lower-right -->
-    <img src="Letters/T.png"
-         style="width:56vw; max-height:42vh; object-fit:contain;
-                top:84%; right:-26%; transform:rotate(-9deg); opacity:0.20">
-
+    <img src="Letters/A1.png" style="width:22vw; max-height:22vh; object-fit:contain; top:88%; left:12%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.15">
+    <img src="Letters/D.png"  style="width:28vw; max-height:28vh; object-fit:contain; top:88%; left:50%; transform:translate(-50%,-50%) rotate(7deg);   opacity:0.21">
+    <img src="Letters/N.png"  style="width:24vw; max-height:24vh; object-fit:contain; top:88%; left:86%; transform:translate(-50%,-50%) rotate(-9deg);  opacity:0.13">
   </div>
   <header>
     <nav class="page nav">
@@ -675,7 +660,7 @@
       </div>
       <div class="grid">
         <article class="card" data-letter="Ա">
-          <img class="card-art" src="Letters/G.png" aria-hidden="true" style="transform:rotate(-8deg)">
+          <img class="card-art" src="Letters/GN.png" aria-hidden="true" style="transform:rotate(-8deg)">
           <h3>The Vision</h3>
           <p>Mesrop Mashtots saw that a nation needed its own written language to preserve knowledge, prayer, law, and education.</p>
         </article>
@@ -691,7 +676,7 @@
         </article>
       </div>
       <div class="quote-band">
-        <img src="Letters/A2.png" aria-hidden="true" style="position:absolute;width:28%;top:-15%;left:-4%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-12deg);pointer-events:none;">
+        <img src="Letters/A1.png" aria-hidden="true" style="position:absolute;width:28%;top:-15%;left:-4%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-12deg);pointer-events:none;">
         <img src="Letters/Y.png"  aria-hidden="true" style="position:absolute;width:22%;top:-10%;right:-3%;mix-blend-mode:screen;opacity:0.18;transform:rotate(10deg);pointer-events:none;">
         <p>&#8220;To know wisdom and instruction, to perceive the words of understanding.&#8221;</p>
       </div>
@@ -725,7 +710,7 @@
           </p>
         </div>
         <div class="credits" style="position:relative;overflow:hidden;">
-          <img src="Letters/S.png" aria-hidden="true" style="position:absolute;width:55%;bottom:-15%;right:-10%;mix-blend-mode:screen;opacity:0.22;transform:rotate(8deg);pointer-events:none;">
+          <img src="Letters/M.png" aria-hidden="true" style="position:absolute;width:55%;bottom:-15%;right:-10%;mix-blend-mode:screen;opacity:0.22;transform:rotate(8deg);pointer-events:none;">
           <div><span>Director</span><span>Hrachya Vardanyan</span></div>
           <div><span>Country</span><span>Armenia / USA</span></div>
           <div><span>Theme</span><span>Language, faith, identity</span></div>
@@ -741,7 +726,7 @@
       </div>
       <div class="watch-layout">
         <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
-          <img src="Letters/D2.png" aria-hidden="true" style="position:absolute;width:90%;bottom:-20%;left:-10%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-8deg);pointer-events:none;">
+          <img src="Letters/I.png" aria-hidden="true" style="position:absolute;width:90%;bottom:-20%;left:-10%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-8deg);pointer-events:none;">
           <div class="play-circle"></div>
         </a>
         <div>
