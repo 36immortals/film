@@ -31,6 +31,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>36 Immortals | Mesrop Mashtots</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="description" content="A documentary about Mesrop Mashtots and the Armenian alphabet." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,6 +184,7 @@
 
     .hero-numeral {
       position: relative;
+      z-index: 1;
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(11rem, 26vw, 26rem);
       font-weight: 300;
@@ -209,6 +211,8 @@
     }
 
     h1.hero-title {
+      position: relative;
+      z-index: 3;
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(2.6rem, 7vw, 8rem);
       font-weight: 900;
@@ -493,24 +497,6 @@
 
     /* ── IN-CONTENT LETTER ART ──────────────────────────── */
     .card { position: relative; overflow: hidden; }
-    .card-art {
-      position: absolute;
-      bottom: -12%;
-      right: -8%;
-      width: 72%;
-      mix-blend-mode: screen;
-      opacity: 0.28;
-      pointer-events: none;
-      user-select: none;
-      transform: rotate(6deg);
-    }
-    .section-corner-art {
-      position: absolute;
-      mix-blend-mode: screen;
-      opacity: 0.18;
-      pointer-events: none;
-      user-select: none;
-    }
     .quote-band { position: relative; overflow: hidden; }
     .film-info  { position: relative; }
 
@@ -607,21 +593,21 @@
   <!-- ══ LETTER ART BACKGROUND ══════════════════════════ -->
   <div class="bg-letters" aria-hidden="true">
     <!-- Evenly distributed 3x4 field with varied opacities -->
-    <img src="Letters/A.png"  style="width:28vw; max-height:28vh; object-fit:contain; top:10%; left:12%; transform:translate(-50%,-50%) rotate(-12deg); opacity:0.24">
-    <img src="Letters/N.png"  style="width:24vw; max-height:24vh; object-fit:contain; top:10%; left:50%; transform:translate(-50%,-50%) rotate(8deg);   opacity:0.14">
-    <img src="Letters/M.png"  style="width:26vw; max-height:26vh; object-fit:contain; top:10%; left:86%; transform:translate(-50%,-50%) rotate(-10deg); opacity:0.20">
+    <img src="Letters/A.png"  style="width:34vw; max-height:34vh; object-fit:contain; top:10%; left:12%; transform:translate(-50%,-50%) rotate(-12deg); opacity:0.12">
+    <img src="Letters/N.png"  style="width:18vw; max-height:18vh; object-fit:contain; top:10%; left:50%; transform:translate(-50%,-50%) rotate(8deg);   opacity:0.12">
+    <img src="Letters/M.png"  style="width:30vw; max-height:30vh; object-fit:contain; top:10%; left:86%; transform:translate(-50%,-50%) rotate(-10deg); opacity:0.12">
 
-    <img src="Letters/G2n.png" style="width:24vw; max-height:24vh; object-fit:contain; top:35%; left:14%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.12">
-    <img src="Letters/B.png"  style="width:30vw; max-height:30vh; object-fit:contain; top:35%; left:50%; transform:translate(-50%,-50%) rotate(12deg);  opacity:0.22">
-    <img src="Letters/I.png" style="width:22vw; max-height:22vh; object-fit:contain; top:35%; left:84%; transform:translate(-50%,-50%) rotate(-14deg); opacity:0.16">
+    <img src="Letters/G2n.png" style="width:20vw; max-height:20vh; object-fit:contain; top:35%; left:14%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.12">
+    <img src="Letters/B.png"  style="width:36vw; max-height:36vh; object-fit:contain; top:35%; left:50%; transform:translate(-50%,-50%) rotate(12deg);  opacity:0.12">
+    <img src="Letters/I.png" style="width:16vw; max-height:16vh; object-fit:contain; top:35%; left:84%; transform:translate(-50%,-50%) rotate(-14deg); opacity:0.12">
 
-    <img src="Letters/Y.png"  style="width:32vw; max-height:32vh; object-fit:contain; top:62%; left:16%; transform:translate(-50%,-50%) rotate(9deg);   opacity:0.19">
-    <img src="Letters/T.png"  style="width:20vw; max-height:20vh; object-fit:contain; top:62%; left:50%; transform:translate(-50%,-50%) rotate(-8deg);  opacity:0.11">
-    <img src="Letters/GN.png"  style="width:26vw; max-height:26vh; object-fit:contain; top:62%; left:84%; transform:translate(-50%,-50%) rotate(11deg);  opacity:0.18">
+    <img src="Letters/Y.png"  style="width:38vw; max-height:38vh; object-fit:contain; top:62%; left:16%; transform:translate(-50%,-50%) rotate(9deg);   opacity:0.12">
+    <img src="Letters/T.png"  style="width:14vw; max-height:14vh; object-fit:contain; top:62%; left:50%; transform:translate(-50%,-50%) rotate(-8deg);  opacity:0.12">
+    <img src="Letters/GN.png"  style="width:30vw; max-height:30vh; object-fit:contain; top:62%; left:84%; transform:translate(-50%,-50%) rotate(11deg);  opacity:0.12">
 
-    <img src="Letters/A1.png" style="width:22vw; max-height:22vh; object-fit:contain; top:88%; left:12%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.15">
-    <img src="Letters/D.png"  style="width:28vw; max-height:28vh; object-fit:contain; top:88%; left:50%; transform:translate(-50%,-50%) rotate(7deg);   opacity:0.21">
-    <img src="Letters/N.png"  style="width:24vw; max-height:24vh; object-fit:contain; top:88%; left:86%; transform:translate(-50%,-50%) rotate(-9deg);  opacity:0.13">
+    <img src="Letters/A1.png" style="width:18vw; max-height:18vh; object-fit:contain; top:88%; left:12%; transform:translate(-50%,-50%) rotate(-6deg);  opacity:0.12">
+    <img src="Letters/D.png"  style="width:34vw; max-height:34vh; object-fit:contain; top:88%; left:50%; transform:translate(-50%,-50%) rotate(7deg);   opacity:0.12">
+    <img src="Letters/N.png"  style="width:20vw; max-height:20vh; object-fit:contain; top:88%; left:86%; transform:translate(-50%,-50%) rotate(-9deg);  opacity:0.12">
   </div>
   <header>
     <nav class="page nav">
@@ -646,7 +632,7 @@
       </div>
       <h1 class="hero-title">Immortals</h1>
       <p class="hero-sub">Mesrop Mashtots</p>
-      <p class="hero-arm">Մեսրոպ Մաշտոց · Հայոց գրևի ստեծծունը</p>
+      <p class="hero-arm">The Invention of the Armenian Alphabet</p>
       <div class="hero-buttons">
         <a class="btn primary" href="#watch">Watch Trailer</a>
         <a class="btn" href="#story">Explore the Story</a>
@@ -660,31 +646,24 @@
       </div>
       <div class="grid">
         <article class="card" data-letter="Ա">
-          <img class="card-art" src="Letters/GN.png" aria-hidden="true" style="transform:rotate(-8deg)">
           <h3>The Vision</h3>
           <p>Mesrop Mashtots saw that a nation needed its own written language to preserve knowledge, prayer, law, and education.</p>
         </article>
         <article class="card" data-letter="Մ">
-          <img class="card-art" src="Letters/B.png" aria-hidden="true" style="transform:rotate(5deg)">
           <h3>The Mission</h3>
           <p>The alphabet became more than writing. It became a bridge between generations and a shield for Armenian culture.</p>
         </article>
         <article class="card" data-letter="Գ">
-          <img class="card-art" src="Letters/D.png" aria-hidden="true" style="transform:rotate(-4deg)">
           <h3>The Legacy</h3>
           <p>Through manuscripts, schools, churches, and books, the Armenian letters continued to carry memory across time.</p>
         </article>
       </div>
       <div class="quote-band">
-        <img src="Letters/A1.png" aria-hidden="true" style="position:absolute;width:28%;top:-15%;left:-4%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-12deg);pointer-events:none;">
-        <img src="Letters/Y.png"  aria-hidden="true" style="position:absolute;width:22%;top:-10%;right:-3%;mix-blend-mode:screen;opacity:0.18;transform:rotate(10deg);pointer-events:none;">
         <p>&#8220;To know wisdom and instruction, to perceive the words of understanding.&#8221;</p>
       </div>
     </section>
 
     <section id="alphabet" class="page section" style="position:relative;overflow:hidden;">
-      <img src="Letters/N.png" aria-hidden="true" style="position:absolute;width:30%;top:-5%;right:-5%;mix-blend-mode:screen;opacity:0.15;transform:rotate(8deg);pointer-events:none;">
-      <img src="Letters/T.png" aria-hidden="true" style="position:absolute;width:24%;bottom:-8%;left:-3%;mix-blend-mode:screen;opacity:0.15;transform:rotate(-10deg);pointer-events:none;">
       <div class="section-title">
         <small>The Alphabet</small>
         <h2>Thirty-six immortal letters</h2>
@@ -710,7 +689,6 @@
           </p>
         </div>
         <div class="credits" style="position:relative;overflow:hidden;">
-          <img src="Letters/M.png" aria-hidden="true" style="position:absolute;width:55%;bottom:-15%;right:-10%;mix-blend-mode:screen;opacity:0.22;transform:rotate(8deg);pointer-events:none;">
           <div><span>Director</span><span>Hrachya Vardanyan</span></div>
           <div><span>Country</span><span>Armenia / USA</span></div>
           <div><span>Theme</span><span>Language, faith, identity</span></div>
@@ -726,7 +704,6 @@
       </div>
       <div class="watch-layout">
         <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
-          <img src="Letters/I.png" aria-hidden="true" style="position:absolute;width:90%;bottom:-20%;left:-10%;mix-blend-mode:screen;opacity:0.2;transform:rotate(-8deg);pointer-events:none;">
           <div class="play-circle"></div>
         </a>
         <div>
