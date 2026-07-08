@@ -31,7 +31,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>36 Immortals | Mesrop Mashtots</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2" />
+  <link rel="shortcut icon" href="/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=2" />
   <meta name="description" content="A documentary about Mesrop Mashtots and the Armenian alphabet." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,15 +68,6 @@
     }
 
     /* text watermark removed — replaced by PNG letter art */
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 1.2rem;
-      border: 1px solid rgba(0, 138, 163, 0.55);
-      pointer-events: none;
-      z-index: 10;
-    }
 
     /* ── PNG LETTER BACKGROUNDS ─────────────────────────── */
     .bg-letters {
@@ -528,9 +522,19 @@
       inset: 14px;
       border: 1px solid rgba(0, 138, 163, 0.3);
       pointer-events: none;
+      z-index: 2;
     }
 
     .watch-player:hover { border-color: rgba(244,165,28,0.55); }
+
+    .watch-player iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      z-index: 1;
+    }
 
     .play-circle {
       width: 72px;
@@ -570,7 +574,6 @@
     }
 
     @media (max-width: 900px) {
-      body::after { inset: 0.6rem; }
       .nav { flex-direction: column; align-items: flex-start; padding: 1.2rem 0; }
       .nav-links { flex-wrap: wrap; }
       .hero { padding: 2.5rem 0 3rem; }
@@ -703,9 +706,15 @@
         <h2>Trailer coming soon</h2>
       </div>
       <div class="watch-layout">
-        <a class="watch-player" href="mailto:36immortals@arnoma.us" aria-label="Watch the trailer">
-          <div class="play-circle"></div>
-        </a>
+        <div class="watch-player" aria-label="Watch the trailer">
+          <iframe
+            src="https://www.youtube.com/embed/v6m0ZFzaF2o?rel=0&modestbranding=1&playsinline=1&origin=https%3A%2F%2Fwww.36immortals.com"
+            title="36 Immortals Trailer"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
         <div>
           <p class="description" style="margin-top:0;">
             Connect with the production team to receive screening information, early trailer access, or festival programming details.
