@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>html{opacity:0;transition:opacity .18s ease}</style>
+  <style>html { background: #050505; } body { opacity: 0; transition: opacity 0.25s ease; }</style>
   <script>
     // 1. Disable browser scroll memory
     if ('scrollRestoration' in history) {
@@ -19,7 +19,8 @@
 
     function _show() {
       window.scrollTo(0, 0);
-      document.documentElement.style.opacity = '1';
+      if(document.body) document.body.style.opacity = '1';
+      else document.documentElement.style.opacity = '1'; // safe fallback
     }
     
     // Fire on real load, but also fire super early as fallback
