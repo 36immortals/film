@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>html { background: #050505; } body { opacity: 0; transition: opacity 0.25s ease; }</style>
+  <style>html { background: #050505; }</style>
   <script>
     // 1. Disable browser scroll memory
     if ('scrollRestoration' in history) {
@@ -19,8 +19,8 @@
 
     function _show() {
       window.scrollTo(0, 0);
-      if(document.body) document.body.style.opacity = '1';
-      else document.documentElement.style.opacity = '1'; // safe fallback
+      var overlay = document.getElementById('load-overlay');
+      if (overlay) overlay.style.opacity = '0';
     }
     
     // Fire on real load, but also fire super early as fallback
@@ -597,6 +597,7 @@
 
 </head>
 <body>
+  <div id="load-overlay" style="position:fixed;inset:0;background:#050505;z-index:99999;transition:opacity 0.4s ease;pointer-events:none;"></div>
 
   <!-- ══ LETTER ART BACKGROUND ══════════════════════════ -->
   <div class="bg-letters" aria-hidden="true">
